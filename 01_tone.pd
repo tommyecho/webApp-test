@@ -1,0 +1,31 @@
+#N canvas 408 163 367 292 16;
+#X obj 55 29 cnv 15 200 150 canvas rcv_canvas simplest_tone_&_volume
+20 12 1 14 -233017 -66577 0;
+#N canvas 745 74 662 515 simplest_tone 0;
+#X obj 222 64 r on_off;
+#X msg 238 134 \$1 50;
+#X obj 222 183 line~;
+#X obj 137 234 *~;
+#X obj 30 80 osc~ 400;
+#X obj 136 361 dac~;
+#X obj 136 282 *~;
+#X obj 407 84 r volume;
+#X msg 415 139 \$1 20;
+#X obj 421 204 line~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
+#X connect 6 0 5 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 1;
+#X restore 77 236 pd simplest_tone;
+#X text 56 181 yannseznec.com;
+#X text 56 202 march 2021;
+#X obj 76 56 tgl 100 0 on_off rcv_on_off empty 17 7 0 10 -260097 -4160
+-1 0 1;
+#X obj 198 58 vsl 40 95 0 1 0 1 volume rcv_volume empty 0 -9 0 10 -204800
+-4160 -1 0 1;
